@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar class="profile-toolbar">
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding custom-content">
+  <div class="profile-container">
+    <div class="profile-hero">
+      <h1 class="welcome-text">Bienvenido, {{ username }}!</h1>
+      
+      <div class="avatar-container">
+        <ion-avatar class="profile-avatar" (click)="fileInput.click()">
+          <img [src]="profileImage" alt="Imagen de perfil" />
+          <div class="avatar-overlay">
+            <ion-icon name="camera"></ion-icon>
+          </div>
+        </ion-avatar>
+        <input #fileInput type="file" accept="image/*" (change)="onFileChange($event)" style="display: none;" />
+      </div>
+      
+      <h2 class="profile-name">{{ username }}</h2>
+    </div>
+
+    <div class="info">
+      <div >
+        <ion-label>
+          <h3 class="card-title">Nombre Completo</h3>
+          <p class="card-content">{{ firstName }} {{ lastName }}</p>
+        </ion-label>
+      </div>
+            
+      <div class="info">
+        <ion-label>
+          <h3>Fecha de nacimiento</h3>
+          <p class="card-content">{{ birthdate | date:'dd/MM/yyyy' }}</p>
+        </ion-label>
+      </div>
+
+      <div class="info">
+        <ion-label>
+          <h3 >Usted esta registrado como</h3>
+          <p >{{ usuario }}</p>
+        </ion-label>
+      </div>
+    </div>
+    
+    <div class="action-buttons">
+      <ion-button routerLink="/editar" expand="full" class="edit-button" color="primary">
+        <ion-icon name="create-outline" slot="start"></ion-icon>
+        Editar Perfil
+      </ion-button>
+
+      <ion-button expand="full" class="logout-button" color="danger" (click)="logout()">
+        <ion-icon name="log-out-outline" slot="start"></ion-icon>
+        Cerrar Sesión
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
+
+<app-footer></app-footer>

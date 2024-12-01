@@ -1,0 +1,169 @@
+:host {
+    --primary-color: #1a1a2e;
+    --secondary-color: #16213e;
+    --accent-color: #4169e1;
+    --text-color: #ffffff;
+    --text-secondary: #a0a0a0;
+    --danger-color: #ff4444;
+    --card-bg: #222437;
+  }
+  .header-toolbar {
+    --background: var(--primary-color);
+    --color: var(--text-color);
+    padding: 1rem;
+  }
+  
+  .header-toolbar h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--text-color);
+  }
+  
+  ion-content {
+    --background: var(--secondary-color);
+  }
+  
+  .user-management-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .stats-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .stat-item ion-icon {
+    font-size: 2rem;
+    color: var(--accent-color);
+  }
+  
+  .stat-info h3 {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+  
+  .stat-info p {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .add-button {
+    --background: var(--accent-color);
+    --border-radius: 8px;
+    --padding-start: 1.5rem;
+    --padding-end: 1.5rem;
+  }
+  
+  .users-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  ion-card-header {
+    background: var(--card-bg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  ion-card-title {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    padding: 1rem 0;
+  }
+  
+  .custom-searchbar {
+    --background: rgba(255, 255, 255, 0.1);
+    --color: var(--text-color);
+    --placeholder-color: var(--text-secondary);
+    --icon-color: var(--text-secondary);
+    --border-radius: 8px;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  
+  .users-list {
+    padding: 1rem 0;
+  }
+  
+  .user-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .user-details h3 {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1rem;
+  }
+  
+  .user-details p, .user-details small {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+  
+  .user-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .edit-button {
+    --color: var(--accent-color);
+  }
+  
+  .delete-button {
+    --color: var(--danger-color);
+  }
+  
+  .spinner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+  }
+  
+  ion-spinner {
+    --color: var(--accent-color);
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+  }

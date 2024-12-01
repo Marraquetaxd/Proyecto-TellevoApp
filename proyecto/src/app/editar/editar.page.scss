@@ -1,0 +1,88 @@
+.profile-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: white;
+  font-size: 16px;
+  margin: 0;
+}
+
+.profile-form {
+  background: #020e2e;
+  
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.custom-item {
+  --background: transparent;
+  --border-color: transparent;
+  --highlight-height: 0;
+  margin-bottom: 16px;
+  
+  
+}
+
+.custom-input,
+.custom-datetime {
+  --padding-start: 0;
+  --padding-end: 0;
+  --background: #16213e;
+  border-radius: 8px;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  margin-top: 8px;
+  
+}
+
+ion-label {
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  
+}
+
+.button-container {
+  margin-top: 32px;
+  display: grid;
+  gap: 12px;
+  
+}
+
+.save-button {
+  --background: #4a90e2;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 4px rgba(74, 144, 226, 0.3);
+  margin: 0;
+  height: 48px;
+  font-weight: 500;
+}
+
+.cancel-button {
+  --border-radius: 8px;
+  --border-color: #4a90e2;
+  --color: #4a90e2;
+  margin: 0;
+  height: 48px;
+  font-weight: 500;
+}

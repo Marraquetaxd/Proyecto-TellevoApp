@@ -1,0 +1,35 @@
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <!-- Botón de Inicio -->
+        <ion-tab-button class="tab-button" routerLink="/home" routerDirection="root" [routerLinkActive]="'tab-selected'">
+          <ion-icon name="home-outline"></ion-icon>
+          <ion-label>Inicio</ion-label>  <!-- Cerrado correctamente -->
+        </ion-tab-button>
+
+        <!-- Botón dinámico según tipo de usuario -->
+        <ion-tab-button
+          class="tab-button"
+          [routerLink]="userType === 'chofer' ? '/transporte' : '/ingresar'"
+          routerDirection="root"
+          [routerLinkActive]="'tab-selected'">
+          <ion-icon [name]="userType === 'chofer' ? 'car-outline' : 'search-outline'"></ion-icon>
+          <ion-label>{{ userType === 'chofer' ? 'Transporte' : 'Buscar Viaje' }}</ion-label>  <!-- Cerrado correctamente -->
+        </ion-tab-button>
+
+        <!-- Botón de Ajustes -->
+        <ion-tab-button class="tab-button" routerLink="/ajustes" routerDirection="root" [routerLinkActive]="'tab-selected'">
+          <ion-icon name="settings-outline"></ion-icon>
+          <ion-label>Ajustes</ion-label>  <!-- Cerrado correctamente -->
+        </ion-tab-button>
+
+        <!-- Botón de Perfil -->
+        <ion-tab-button class="tab-button" routerLink="/perfil" routerDirection="root" [routerLinkActive]="'tab-selected'">
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-label>Perfil</ion-label>  <!-- Cerrado correctamente -->
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

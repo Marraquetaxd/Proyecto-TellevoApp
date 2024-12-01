@@ -1,0 +1,295 @@
+:root {
+  --menu-bg: #1a1a2e;
+  --menu-text: #ffffff;
+  --menu-item-hover: #16213e;
+  --header-bg: #0f3460;
+  --accent-color: #e94560;
+}
+
+.menu-content {
+  --background: var(--menu-bg);
+  --padding-top: 0;
+}
+
+.menu-header {
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, var(--header-bg), var(--menu-bg));
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  ion-avatar {
+    width: 60px;
+    height: 60px;
+    border: 3px solid var(--menu-text);
+  }
+
+  .user-info {
+    color: var(--menu-text);
+    
+    h2 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  }
+}
+
+.menu-items {
+  padding: 1rem 0;
+
+  ion-item {
+    --background: transparent;
+    --color: var(--menu-text);
+    --padding-start: 1rem;
+    --padding-end: 1rem;
+    --min-height: 50px;
+    margin: 0.5rem 0;
+
+    &:hover {
+      --background: var(--menu-item-hover);
+    }
+
+    ion-icon {
+      color: var(--accent-color);
+      font-size: 1.2rem;
+      margin-right: 1rem;
+    }
+
+    ion-label {
+      font-weight: 500;
+    }
+  }
+}
+
+.main-header {
+  ion-toolbar {
+    
+    --color: var(--menu-text);
+    
+    ion-menu-button {
+      color: var(--menu-text);
+    }
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+
+    .welcome-text {
+      ion-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 0;
+      }
+
+      .user-type {
+        margin: 0;
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+    }
+
+    ion-avatar {
+      width: 40px;
+      height: 40px;
+      border: 2px solid var(--menu-text);
+    }
+  }
+}
+
+ion-item {
+  transition: all 0.3s ease;
+}
+
+ion-menu-button {
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.carta{
+  margin-top: 3rem;
+  background: var(--menu-item-hover);
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(15, 52, 96, 0.9), rgba(26, 26, 46, 0.9));
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+
+
+  .features-section {
+    padding: 24px 16px;
+    background: var(--dark-bg);
+    
+    .features-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-align: center;
+      margin-bottom: 32px;
+      position: relative;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: var(--highlight);
+        border-radius: 2px;
+      }
+    }
+  
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+  
+    .feature-box {
+      background: var(--dark-card);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        border-color: var(--highlight);
+      }
+  
+      .feature-icon-wrapper {
+        width: 64px;
+        height: 64px;
+        margin: 0 auto 16px;
+        background: linear-gradient(135deg, var(--dark-accent), var(--highlight));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(233, 69, 96, 0.2);
+        
+        ion-icon {
+          font-size: 32px;
+          color: var(--text-primary);
+        }
+      }
+  
+      h3 {
+        color: var(--text-primary);
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+  
+      p {
+        color: var(--text-secondary);
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 16px;
+      }
+  
+      .feature-stats {
+        padding: 16px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 16px;
+  
+        .stat {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          
+          .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--highlight);
+            text-shadow: 0 0 10px rgba(233, 69, 96, 0.3);
+          }
+          
+          .stat-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          }
+        }
+      }
+  
+      .learn-more {
+        --color: var(--highlight);
+        font-weight: 500;
+        opacity: 0.9;
+        
+        &:hover {
+          opacity: 1;
+        }
+        
+        ion-icon {
+          margin-left: 8px;
+          transition: transform 0.2s ease;
+        }
+        
+        &:hover ion-icon {
+          transform: translateX(4px);
+        }
+      }
+    }
+  
+    .quick-actions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+  
+      .action-button {
+        --background: var(--highlight);
+        --background-activated: var(--dark-accent);
+        --border-radius: 12px;
+        --padding-top: 16px;
+        --padding-bottom: 16px;
+        --box-shadow: 0 4px 15px rgba(233, 69, 96, 0.2);
+        
+        &:hover {
+          --box-shadow: 0 6px 20px rgba(233, 69, 96, 0.3);
+        }
+        
+        ion-icon {
+          font-size: 20px;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+  

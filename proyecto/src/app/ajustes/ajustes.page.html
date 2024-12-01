@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ajustes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-divider>
+      <ion-label>General</ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label>Modo Oscuro</ion-label>
+      <ion-toggle slot="end" (ionChange)="toggleDarkMode()"></ion-toggle>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Notificaciones</ion-label>
+      <ion-toggle slot="end"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item-divider>
+      <ion-label>Personalización</ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label>Tamaño de Fuente</ion-label>
+      <ion-select placeholder="Normal">
+        <ion-select-option value="small">Pequeño</ion-select-option>
+        <ion-select-option value="normal">Normal</ion-select-option>
+        <ion-select-option value="large">Grande</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Tema</ion-label>
+      <ion-select placeholder="Sistema">
+        <ion-select-option value="light">Claro</ion-select-option>
+        <ion-select-option value="dark">Oscuro</ion-select-option>
+        <ion-select-option value="system">Sistema</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item-divider>
+      <ion-label>Otros</ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label>Términos y Condiciones</ion-label>
+      <ion-button fill="clear" slot="end">Ver</ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Política de Privacidad</ion-label>
+      <ion-button fill="clear" slot="end" (click)="openVideo()">Ver</ion-button>
+    </ion-item>       
+  </ion-list>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title>Versión 1.0.0</ion-title>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>
+
+<app-footer></app-footer>
+

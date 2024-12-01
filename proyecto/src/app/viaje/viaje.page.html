@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- Botón de Volver -->
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+        Volver
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Crear Viaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="tripForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Origen</ion-label>
+      <ion-input
+        formControlName="origen"
+        (ionInput)="handleInput($event.target.value, 'origin')"
+      ></ion-input>
+    </ion-item>
+
+    <ion-list *ngIf="originSuggestions.length > 0">
+      <ion-item
+        *ngFor="let suggestion of originSuggestions"
+        (click)="selectLocation(suggestion, 'origin')"
+      >
+        {{ suggestion.place_name }}
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+      <ion-label position="floating">Destino</ion-label>
+      <ion-input
+        formControlName="destino"
+        (ionInput)="handleInput($event.target.value, 'destination')"
+      ></ion-input>
+    </ion-item>
+
+    <ion-list *ngIf="destinationSuggestions.length > 0">
+      <ion-item
+        *ngFor="let suggestion of destinationSuggestions"
+        (click)="selectLocation(suggestion, 'destination')"
+      >
+        {{ suggestion.place_name }}
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+      <ion-label position="floating"></ion-label>
+      <ion-datetime formControlName="fecha"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Costo por Pasajero</ion-label>
+      <ion-input
+        formControlName="costo"
+        type="number"
+        placeholder="Ingrese el costo por pasajero"
+      ></ion-input>
+    </ion-item>
+
+    <ion-button type="submit" expand="block" [disabled]="tripForm.invalid">
+      Crear Viaje
+    </ion-button>
+
+    <ion-button
+      expand="block"
+      color="secondary"
+      (click)="showRoute()"
+      [disabled]="!originCoords || !destinationCoords"
+    >
+      Mostrar Ruta
+    </ion-button>
+  </form>
+
+  <div 
+    id="map-container" 
+    class="map-normal" 
+    (click)="toggleMapSize()"
+  >
+    <div id="map" style="height: 100%; width: 100%;"></div>
+  </div>
+</ion-content>
+
+<app-footer></app-footer>

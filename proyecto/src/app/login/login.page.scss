@@ -1,0 +1,83 @@
+.auth-content {
+  --background: var(--ion-background-color);
+}
+
+.login-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.auth-card {
+  background: var(--ion-card-background, #fff);
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.auth-header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--ion-text-color, #000);
+  margin-bottom: 0.5rem;
+}
+
+.auth-header p {
+  color: var(--ion-text-color-secondary, #666);
+}
+
+.custom-item {
+  --background: transparent;
+  --border-color: var(--ion-text-color, #ccc);
+  margin-bottom: 1.5rem;
+}
+
+.input-icon {
+  margin-right: 0.5rem;
+  color: var(--ion-text-color, #888);
+}
+
+.custom-input {
+  --color: var(--ion-text-color, #000);
+}
+
+.login-button {
+  --background: var(--ion-color-primary, #3880ff);
+  --background-hover: var(--ion-color-primary-shade, #3171e0);
+  --color: #fff;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.register-button {
+  --border-color: var(--ion-color-primary, #3880ff);
+  --color: var(--ion-color-primary, #3880ff);
+  border-radius: 8px;
+}
+
+.divider {
+  text-align: center;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.divider span {
+  background: var(--ion-background-color, #fff);
+  padding: 0 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.divider:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--ion-text-color-secondary, #ddd);
+  z-index: 1;
+}

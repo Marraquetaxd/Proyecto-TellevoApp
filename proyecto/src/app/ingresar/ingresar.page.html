@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="title">Viajes Disponibles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let trip of allTrips" class="trip-card">
+      <ion-label>
+        <h3 class="trip-title">Origen: {{ trip.origen }}</h3>
+        <h3 class="trip-title">Destino: {{ trip.destino }}</h3>
+        <p class="trip-details">Fecha: {{ trip.fecha | date: 'longDate' }}</p>
+        <p class="trip-details">Costo: ${{ trip.costo }}</p>
+      </ion-label>
+
+      <ion-button 
+        slot="end" 
+        fill="solid" 
+        color="success" 
+        (click)="joinTrip(trip)">
+        Unirse
+      </ion-button>
+      
+      <ion-button 
+        slot="end" 
+        fill="outline" 
+        color="primary" 
+        [routerLink]="['/viaje-mapa', trip.id]">
+        Ver Mapa
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #noTrips>
+    <div class="no-trips">
+      <p>No hay viajes disponibles en este momento.</p>
+    </div>
+  </ng-template>
+</ion-content>
+
+<app-footer></app-footer>

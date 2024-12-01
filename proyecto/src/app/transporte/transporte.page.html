@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mis Viajes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="tripHistory.length > 0; else noTrips">
+    <ion-item *ngFor="let trip of tripHistory">
+      <ion-label>
+        <h3>Origen: {{ trip.origen }}</h3>
+        <h3>Destino: {{ trip.destino }}</h3>
+        <p>Fecha: {{ trip.fecha | date: 'longDate' }}</p>
+        <p>Costo por pasajero: ${{ trip.costo }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Mensaje si no hay viajes -->
+  <ng-template #noTrips>
+    <div class="no-trips ion-text-center">
+      <p>No tienes viajes en tu historial.</p>
+    </div>
+  </ng-template>
+
+
+  <!-- Botón para iniciar un nuevo viaje -->
+  <div class="new-trip-button">
+    <ion-button expand="block" (click)="startNewTrip()">Iniciar Nuevo Viaje</ion-button>
+  </div>
+</ion-content>
+
+<app-footer></app-footer>

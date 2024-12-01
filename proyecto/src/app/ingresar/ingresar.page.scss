@@ -1,0 +1,63 @@
+ion-toolbar {
+    --background: #2a2a72;
+    --color: white;
+  }
+  
+  .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .trip-card {
+    background: #f9f9f9;
+    margin: 5px; /* Reducido */
+    border-radius: 6px; /* Más compacto */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra más ligera */
+    padding: 3px; /* Reducido */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .trip-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  }
+  
+  .trip-title {
+    font-size: 1rem; /* Reducido */
+    color: #2a2a72;
+    font-weight: bold;
+    margin-bottom: 2px; /* Más compacto */
+  }
+  
+  .trip-details {
+    font-size: 0.9rem; /* Reducido */
+    color: #555;
+    margin-bottom: 4px; /* Más compacto */
+  }
+  
+  .no-trips {
+    text-align: center;
+    color: #777;
+    font-size: 1rem;
+    margin-top: 15px; /* Reducido */
+  }
+  
+  ion-button {
+    --border-radius: 4px; /* Botones más pequeños */
+    --padding-top: 0;
+    --padding-bottom: 0;
+    height: 28px; /* Ajuste de altura */
+    font-size: 0.8rem; /* Reducido */
+  }
+  
+  ion-button[color="success"] {
+    --background: #28a745;
+  }
+  
+  ion-button[color="primary"] {
+    --background: #007bff;
+    --color: #fff;
+    --border-color: #007bff;
+  }
+  

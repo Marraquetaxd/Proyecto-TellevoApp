@@ -1,0 +1,63 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar class="header-toolbar">
+    <ion-title>
+      <h1>Gestión de Usuarios</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="user-management-container">
+    <div class="stats-card">
+      <div class="stat-item">
+        <ion-icon name="people"></ion-icon>
+        <div class="stat-info">
+          <h3>Total Usuarios</h3>
+          <p>{{users.length}}</p>
+        </div>
+      </div>
+      <ion-button class="add-button" (click)="addUser()">
+        <ion-icon name="person-add-outline"></ion-icon>
+        Nuevo Usuario
+      </ion-button>
+    </div>
+
+    <ion-card class="users-card">
+      <ion-card-header>
+        <ion-card-title>Lista de Usuarios</ion-card-title>
+        <ion-searchbar placeholder="Buscar usuario" class="custom-searchbar"></ion-searchbar>
+      </ion-card-header>
+
+      <ion-card-content>
+        <div class="users-list">
+          <div *ngFor="let user of users" class="user-item">
+            <div class="user-info">
+              <div class="user-details">
+                <h3>{{ user.firstName }} {{ user.lastName }}</h3>
+                <p>{{ user.username }}</p>
+                <small>{{ user.tipo_usuario }}</small> 
+              </div>
+            </div>
+            <div class="user-actions">
+              <ion-button fill="clear" (click)="modificarUsuario(user.id)" class="edit-button">
+                <ion-icon name="create-outline"></ion-icon>
+                Modificar
+              </ion-button>
+              <ion-button fill="clear" (click)="deleteUser(user.username)" class="delete-button">
+                <ion-icon name="trash-outline"></ion-icon>
+                Eliminar
+              </ion-button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="spinner-container" *ngIf="users.length === 0">
+          <ion-spinner name="crescent"></ion-spinner>
+          <p>Cargando usuarios...</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+<app-footer></app-footer>

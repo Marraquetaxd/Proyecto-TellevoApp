@@ -1,0 +1,71 @@
+.profile-container {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--ion-background-color, #00001f);
+  color: var(--ion-text-color, white);
+}
+
+.profile-avatar {
+  margin: 20px auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.05);
+}
+
+.profile-name {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--ion-text-color, #fff);
+}
+
+ion-list {
+  margin-top: 20px;
+  --background: transparent;
+}
+
+ion-item {
+  --background: var(--ion-card-background, #1e1e2f);
+  --color: var(--ion-text-color, white);
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+ion-item:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.edit-button {
+  margin-top: 30px;
+  --background: var(--ion-color-primary, #3880ff);
+  --background-hover: var(--ion-color-primary-shade, #3171e0);
+  --color: white;
+  border-radius: 8px;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.foto {
+  text-align: center;
+}
+
+.user {
+  color: var(--ion-text-color, white);
+  font-size: 1.2rem;
+}
+
+.info {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--ion-text-color-secondary, #aaa);
+}

@@ -1,0 +1,100 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-md="6" size-lg="4" size="12">
+        <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+          <ion-item>
+            <ion-label position="floating">Nombre y Apellido</ion-label>
+            <ion-input type="text" class="nombre" [(ngModel)]="fullName" name="fullName" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Nombre de Usuario</ion-label>
+            <ion-input 
+              type="text" 
+              [(ngModel)]="username" 
+              name="username" 
+              required 
+              minlength="3"
+              #usernameInput="ngModel">
+            </ion-input>
+          </ion-item>
+          <div class="error-message" *ngIf="usernameError">
+            {{ usernameError }}
+          </div>
+
+          <ion-item>
+            <ion-label>Tipo de Usuario</ion-label>
+            <ion-select [(ngModel)]="tipo_usuario" name="tipo_usuario" class="tipo">
+              <ion-select-option value="chofer">Chofer</ion-select-option> 
+              <ion-select-option value="cliente">Pasajero</ion-select-option>  
+            </ion-select>
+          </ion-item>
+          <ion-item *ngIf="tipo_usuario === 'chofer'">
+            <ion-label position="floating">Marca del Vehículo</ion-label>
+            <ion-input type="text" [(ngModel)]="vehicleBrand" name="vehicleBrand" required></ion-input>
+          </ion-item>
+          
+          <ion-item *ngIf="tipo_usuario === 'chofer'">
+            <ion-label position="floating">Modelo del Vehículo</ion-label>
+            <ion-input type="text" [(ngModel)]="vehicleModel" name="vehicleModel" required></ion-input>
+          </ion-item>
+          
+          <ion-item *ngIf="tipo_usuario === 'chofer'">
+            <ion-label position="floating">Año del Vehículo</ion-label>
+            <ion-input type="number" [(ngModel)]="vehicleYear" name="vehicleYear" required></ion-input>
+          </ion-item>
+          
+          <ion-item *ngIf="tipo_usuario === 'chofer'">
+            <ion-label position="floating">Patente del Vehículo</ion-label>
+            <ion-input type="text" [(ngModel)]="vehiclePlate" name="vehiclePlate" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating" class="xd"></ion-label>
+            <ion-datetime
+              [(ngModel)]="birthdate"
+              name="birthdate"
+              displayFormat="DD MMM YYYY"
+              pickerFormat="DD MMM YYYY"
+              presentation="date"
+              required
+            ></ion-datetime>
+          </ion-item>          
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input 
+              type="password" 
+              [(ngModel)]="contra" 
+              name="contra" 
+              required 
+              minlength="8"
+              (ionChange)="validatePassword()"
+              #passwordInput="ngModel">
+            </ion-input>
+          </ion-item>
+          <div class="error-message" *ngIf="passwordError">
+            {{ passwordError }}
+          </div>
+          <ion-item>
+            <ion-label position="floating">Confirmar Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="confirmPassword" name="confirmPassword"></ion-input>
+          </ion-item>
+          
+
+          <ion-button expand="full" color="medium" (click)="clearForm()">Limpiar</ion-button>
+
+          <ion-button expand="full" type="submit" [disabled]="!registerForm.form.valid">Crear Cuenta</ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+<app-footer></app-footer>

@@ -1,0 +1,64 @@
+<ion-content class="ion-padding">
+  <div class="profile-container">
+    <div class="profile-header">
+      <h1>Editar Perfil</h1>
+      <p class="subtitle">Actualiza tu información personal</p>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" class="profile-form">
+      <div class="form-group">
+        <ion-item lines="none" class="custom-item">
+          <ion-label position="floating">Nombre de usuario</ion-label>
+          <ion-input 
+            [(ngModel)]="updatedUser.username" 
+            name="username" 
+            required
+            class="custom-input"
+            placeholder="Ingresa tu nombre de usuario">
+          </ion-input>
+        </ion-item>
+      </div>
+
+      <div class="form-group">
+        <ion-item lines="none" class="custom-item">
+          <ion-label position="floating" >Nombre Completo</ion-label>
+          <ion-input 
+            [(ngModel)]="updatedUser.fullName" 
+            name="fullName" 
+            required
+            class="custom-input"
+            placeholder="Ingresa tu nombre completo">
+          </ion-input>
+        </ion-item>
+      </div>
+
+      <div class="form-group">
+        <ion-item lines="none" class="custom-item">
+          <ion-label position="floating">Fecha de Nacimiento</ion-label>
+          <ion-datetime
+            [(ngModel)]="updatedUser.birthdate"
+            name="birthdate"
+            displayFormat="DD MMM YYYY"
+            pickerFormat="DD MMM YYYY"
+            required
+            presentation="date"
+            class="custom-datetime"
+            placeholder="Selecciona tu fecha de nacimiento">
+          </ion-datetime>
+        </ion-item>
+      </div>
+
+      <div class="button-container">
+        <ion-button expand="block" type="submit" class="save-button">
+          <ion-icon name="save-outline" slot="start"></ion-icon>
+          Guardar cambios
+        </ion-button>
+        
+        <ion-button expand="block" fill="outline" class="cancel-button">
+          <ion-icon name="close-outline" slot="start"></ion-icon>
+          Cancelar
+        </ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>

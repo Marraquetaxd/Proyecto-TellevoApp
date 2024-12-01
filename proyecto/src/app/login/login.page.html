@@ -1,0 +1,71 @@
+<ion-content class="auth-content">
+  <div class="login-container">
+    <ion-grid fixed>
+      <ion-row class="ion-justify-content-center ion-align-items-center">
+        <ion-col size-md="6" size-lg="4" size="12">
+          <div class="auth-card">
+            <div class="auth-header">
+              <h1>Bienvenido</h1>
+              <p>Ingresa a tu cuenta para continuar</p>
+            </div>
+
+            <div class="error-message" *ngIf="loginError">
+              <ion-icon name="alert-circle-outline"></ion-icon>
+              <span>{{ loginError }}</span>
+            </div>
+
+            <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="auth-form">
+              <ion-item class="custom-item">
+                <ion-label position="floating">
+                  <ion-icon name="person-outline" class="input-icon"></ion-icon>
+                  Nombre de usuario
+                </ion-label>
+                <ion-input
+                  type="text"
+                  [(ngModel)]="username"
+                  name="username"
+                  required
+                  minlength="3"
+                  maxlength="15"
+                  class="custom-input">
+                </ion-input>
+              </ion-item>
+
+              <ion-item class="custom-item">
+                <ion-label position="floating">
+                  <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
+                  Contraseña
+                </ion-label>
+                <ion-input
+                  type="password"
+                  [(ngModel)]="password"
+                  name="password"
+                  required
+                  pattern="\d{4}"
+                  class="custom-input">
+                </ion-input>
+              </ion-item>
+
+              <ion-button expand="block" type="submit" class="login-button">
+                <ion-icon name="log-in-outline" slot="start"></ion-icon>
+                Ingresar
+              </ion-button>
+
+              <div class="divider">
+                <span>o</span>
+              </div>
+
+              <ion-button expand="block" routerLink="/register" fill="outline" class="register-button">
+                <ion-icon name="person-add-outline" slot="start"></ion-icon>
+                Crear Cuenta
+              </ion-button>
+            </form>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+
+<app-footer></app-footer>
+  
